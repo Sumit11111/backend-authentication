@@ -1,7 +1,7 @@
 //imprting mongoose
 const mongoose=require('mongoose');
 //connectin setup
-mongoose.connect("mongodb://127.0.0.1:27017/myUserDB");
+mongoose.connect(`mongodb+srv://${process.env.db_user}:${process.env.db_password}@cluster0.eoh5n.mongodb.net/test?authMechanism=DEFAULT`);
 const db=mongoose.connection;
 //opening db connection
 db.on('error',console.error.bind(console,"Error connecting to MongoDB"));
