@@ -1,0 +1,86 @@
+<html>
+<head>
+    <title>Success Page</title>
+    <style type="text/css" media="screen">
+        body{
+            margin: 0px;
+        }
+        #form{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            height: 300px;
+            width: 450px;
+            background: #f2f2f2;
+            overflow: hidden;
+            border-radius: 20px;
+            cursor: pointer;
+            box-shadow: 0 0 20px 8px #d0d0d0;
+        }
+        h1{
+            border-bottom: 1px solid black;
+        }
+        #header{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            background-color: grey;
+            height: 80px;
+            color: white;
+        }
+        #left-container{
+            margin-left: 20px;
+        }
+        #left-container a {
+            position: absolute;
+            left:130px;
+            top: 20px;
+        }
+        #right-container{
+            margin-right: 50px;
+            margin-top: 20px;
+        }
+        #right-container a{
+            margin-right: 20px;
+        }
+        span{
+            margin-left: 130px;
+        }
+        #sign-in-form{
+            margin: 60px;
+        }
+        input[type="submit"]{
+            margin-left: 50px;
+            width: 200px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="header">
+        <div id="left-container">
+            <img height="70px" width="70px" src="https://cdn-icons-png.flaticon.com/512/2725/2725708.png" alt="icon">
+            <a href="/"><b>Home</b></a>
+        </div>
+        <div id="right-container">
+            <a href="/signIn"><b>Sign In</b></a>
+            <!-- <a><b>Sign Out</b></a> -->
+        </div>
+    </div>
+    <div id="form">
+        <h1><span>Sign Up</span></h1>
+            <div id="sign-in-form">
+                <form method="post" action="/createUser">
+                    <label>Email:</label>
+                    <input type="email" name="email" placeholder="Enter Email..." required/><br/><br/>
+                    <label>Password:</label>
+                    <input type="password" name="password" placeholder="Enter Password..." required/><br/><br/>
+                    <label>Confirm Password:</label>
+                    <input type="password" name="cPassword" placeholder="confirm Password..." required/><br/><br/>
+                    <input type="submit" value="Sign Up">
+                    </form>
+        </div>
+</body>
+ 
+</html> 
