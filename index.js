@@ -121,12 +121,12 @@ app.post('/admin',(req,res)=>{
 });
 
 //Normal signUp page routing
-app.post('/createUser',(req,res)=>{
+app.post('/createUser',async(req,res)=>{
     if(req.body.password!=req.body.cPassword)
     {
         return res.redirect("back");
     }
-    user.findOne({email:req.body.email},function(err,newUser){
+    await user.findOne({email:req.body.email},function(err,newUser){
         if(err)
         {
             console.log("error in finding user during sign Up");
@@ -143,6 +143,7 @@ app.post('/createUser',(req,res)=>{
                 return res.redirect('/signIn');
             })
         }else{
+            notifier.notify(`user already exist!`);
             res.redirect('/signIn');
         }
     })
