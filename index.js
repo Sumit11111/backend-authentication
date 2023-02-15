@@ -34,6 +34,9 @@ app.use(passport.session());
 app.get('/',(req,res)=>{
     res.render('home');
 });
+app.get('/admin',(req,res)=>{
+    res.render('admin');
+});
 app.get('/signIn',(req,res)=>{
     res.render('signIn');
 });
