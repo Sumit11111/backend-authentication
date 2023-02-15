@@ -121,12 +121,12 @@ app.post('/admin',(req,res)=>{
 });
 
 //Normal signUp page routing
-app.post('/createUser',async(req,res)=>{
+app.post('/createUser',(req,res)=>{
     if(req.body.password!=req.body.cPassword)
     {
         return res.redirect("back");
     }
-    await user.findOne({email:req.body.email},function(err,newUser){
+    user.findOne({email:req.body.email},function(err,newUser){
         if(err)
         {
             console.log("error in finding user during sign Up");
