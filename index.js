@@ -46,18 +46,8 @@ app.get('/signOut',(req,res)=>{
 });
 //google authentication setup
 app.get('/auth/google',passport.authenticate('google',{scope:['profile','email']}));
-app.get('/auth/google/callback',passport.authenticate('google',{failureRedirect:'/signIn'}),(req,res)=>{
-    try{
-        console.log(success);
-    }
-    catch(err){
-        console.log('*********',err);
-        return res.json(500,{
-            message:"Internal server Error"
-        });
-    }
-
-})
+app.get('/auth/google/callback',passport.authenticate('google',{failureRedirect:'/signIn',successRedirect: '/admin'}))
+    
 
 //forget password routing page
 app.get('/forget-password',(req,res)=>{
